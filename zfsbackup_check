@@ -1,0 +1,4 @@
+#!/bin/sh
+dir=~pauld/zfsbackup
+log="$dir/zfsbackup_check.stdout"
+pfexec $dir/.venv/bin/python $dir/zfsbackup_check.py > $log 2>&1

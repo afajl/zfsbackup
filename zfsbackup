@@ -1,0 +1,7 @@
+#!/bin/sh
+dir=~pauld/zfsbackup
+log="$dir/zfsbackup.stdout"
+echo "Logging to $log"
+nohup pfexec $dir/.venv/bin/python $dir/zfsbackup.py > $log 2>&1
+mailx -s "Backup done" root < $log
+echo Done
